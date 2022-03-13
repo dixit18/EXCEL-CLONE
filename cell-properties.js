@@ -12,7 +12,11 @@ for(let i= 0;i < rows;i++){
             fontFamily: "monospace",
             fontSize: "14",
             fontColor: "#000000",
-            BGColor: "#000000"//just for indication purpose
+            BGColor: "#000000",//just for indication purpose
+            value:"",
+            formula:"",
+            children: [],
+
         }
         sheetRow.push(cellProp);
     }
@@ -142,6 +146,7 @@ alignment.forEach((alignmentElem)=>{
                 rightAlign.style.backgroundColor = activeColorProp;
                 break;
         }
+     
     })
 })
 
@@ -192,6 +197,9 @@ cell.addEventListener("click", (e)=>{
             rightAlign.style.backgroundColor = activeColorProp;
             break;
     }
+    let formulaBar = document.querySelector(".formula-bar");
+    formulaBar.value = cellProp.formula;
+    cell.value = cellProp.value;
 
 })
 }
