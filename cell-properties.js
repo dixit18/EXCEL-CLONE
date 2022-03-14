@@ -1,27 +1,34 @@
 // Storage
+let collectedSheetDB = [];//contains all sheet db
 let sheetDB =[];
 
-for(let i= 0;i < rows;i++){
-    let sheetRow =[];
-    for(let j =0;j <cols;j++){
-        let cellProp ={
-            bold : false,
-            italic : false,
-            underline: false,
-            alignment: "left",
-            fontFamily: "monospace",
-            fontSize: "14",
-            fontColor: "#000000",
-            BGColor: "#000000",//just for indication purpose
-            value:"",
-            formula:"",
-            children: [],
-
-        }
-        sheetRow.push(cellProp);
-    }
-    sheetDB.push(sheetRow);
+{
+    let addSheetBtn = document.querySelector(".sheet-add-icon");
+    addSheetBtn.click();
+    
 }
+
+// for(let i= 0;i < rows;i++){
+//     let sheetRow =[];
+//     for(let j =0;j <cols;j++){
+//         let cellProp ={
+//             bold : false,
+//             italic : false,
+//             underline: false,
+//             alignment: "left",
+//             fontFamily: "monospace",
+//             fontSize: "14",
+//             fontColor: "#000000",
+//             BGColor: "#000000",//just for indication purpose
+//             value:"",
+//             formula:"",
+//             children: [],
+
+//         }
+//         sheetRow.push(cellProp);
+//     }
+//     sheetDB.push(sheetRow);
+// }
 
 // selector for all properties
 let bold = document.querySelector(".bold");
@@ -199,7 +206,7 @@ cell.addEventListener("click", (e)=>{
     }
     let formulaBar = document.querySelector(".formula-bar");
     formulaBar.value = cellProp.formula;
-    cell.value = cellProp.value;
+    cell.innerText = cellProp.value;
 
 })
 }
